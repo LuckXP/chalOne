@@ -15,3 +15,34 @@ var $list = $('#namePhoneTable');
 					</td>\
 				</tr>');
 })
+
+function infoToTable(event){
+	event.preventDefault();
+	var $element = $(event.target);
+	var $form = $element.closest('form');
+	var $inputs = $form.find('input')
+	var firstName = $("#first").val();
+	var lastName = $("#last").val();
+	var phoneNumber = $("#phone").val();
+	
+	if(firstName && phoneNumber) {
+		$list.append('<tr>\
+					<td>' + firstName + '\
+					</td>\
+					<td>' + lastName + '\
+					</td>\
+					<td>' + phoneNumber + '\
+					</td>\
+				</tr>');
+	}
+	return false;
+}
+
+
+
+
+
+
+
+
+ $("#submit-button").on('click', infoToTable);
