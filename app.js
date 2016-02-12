@@ -4,8 +4,9 @@ var personThree = {firstName: "sue", lastName: "johnson", phoneNumber: '404-335-
 
 var people = [personOne, personTwo, personThree];
 var $list = $('#namePhoneTable');
+var $idiotSection = $('#idiot')
 
- people.forEach(function(persInfo){
+people.forEach(function(persInfo){
 	$list.append('<tr>\
 					<td>' + persInfo.firstName + '\
 					</td>\
@@ -24,25 +25,41 @@ function infoToTable(event){
 	var firstName = $("#first").val();
 	var lastName = $("#last").val();
 	var phoneNumber = $("#phone").val();
-	
-	if(firstName && phoneNumber) {
-		$list.append('<tr>\
-					<td>' + firstName + '\
-					</td>\
-					<td>' + lastName + '\
-					</td>\
-					<td>' + phoneNumber + '\
-					</td>\
-				</tr>');
+	var numberCheck = /^[0-9]\d{2}-\d{3}-\d{4}/;
+
+	function appendHandler(){
+		if(firstName && phoneNumber) {
+			$list.append('<tr>\
+							<td>' + firstName + '\
+							</td>\
+							<td>' + lastName + '\
+							</td>\
+							<td>' + phoneNumber + '\
+							</td>\
+						</tr>');			
+		}
 	}
-	return false;
+
+	if(numberCheck.test(phoneNumber)){
+		appendHandler();
+	} else {
+		alert("Please enter phone number in the following format:\n\
+			000-000-0000");
+		$idiotSection.append('<section>\
+								<div class="container idiot">\
+									<h1>YOU MIGHT BE AN IDIOT IF...</h1>\
+									<p>you can\'t follow directions</p>\
+								</div>\
+							</section>');
+	};
+
+
+
 }
 
-
-
-
-
-
-
+function clearInputs(){
+		$('input').val('')
+	}
 
  $("#submit-button").on('click', infoToTable);
+ $("#submit-button").on('click', clearInputs);

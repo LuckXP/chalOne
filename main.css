@@ -1,0 +1,17 @@
+.betterTron{
+	text-align: center;
+	color: white;
+	background-image: url(http://cinevenger.com/wp-content/uploads/2012/02/Matrix-C1.jpg);
+	background-size: cover;
+	background-position: center center;
+	border-radius: 15px;
+}
+
+.idiot{
+	background: red; /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(bottom right, red, yellow); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to bottom right, red, yellow); /* Standard syntax */
+	color: white;
+}
