@@ -15,3 +15,11 @@
   	background: linear-gradient(to bottom right, red, yellow); /* Standard syntax */
 	color: white;
 }
+
+.fade{
+	background: white; /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient(left top, #325534, #555E39); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(bottom right, #325534, #555E39); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(bottom right, #325534, #555E39); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to bottom right, #325534, #555E39); /* Standard syntax */
+}
